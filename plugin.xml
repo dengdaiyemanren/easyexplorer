@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="java.lang.Object"
+            id="EasyExplorer.contribution1">
+        <visibility>
+           <or>
+              <objectClass
+                    name="org.eclipse.core.resources.IResource">
+              </objectClass>
+              <objectClass
+                    name="org.eclipse.jdt.core.IJavaProject">
+              </objectClass>
+              <objectClass
+                    name="org.eclipse.jdt.core.IJavaElement">
+              </objectClass>
+           </or>
+        </visibility>
+         <menu
+               label="Click me!"
+               path="additions"
+               id="EasyExplorer.Explorer">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               label="Open CMD"
+               class="easyexplorer.popup.actions.OpenCMD"
+               menubarPath="EasyExplorer.Explorer/group1"
+               enablesFor="1"
+               id="EasyExplorer.openCmd">
+         </action>
+         <action
+               class="easyexplorer.popup.actions.OpenExplorer"
+               enablesFor="1"
+               id="EasyExplorer.openExplorer"
+               label="Open Explorer"
+               menubarPath="EasyExplorer.Explorer/group1">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>
